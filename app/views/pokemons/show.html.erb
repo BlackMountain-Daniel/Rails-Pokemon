@@ -1,0 +1,44 @@
+<div class="container py-4">
+  <div class="row">
+
+    <!-- Left: Pokémon profile -->
+    <div class="col-md-6 mb-4">
+      <div class="profile-header flex-column text-center">
+        <% if @pokemon.photo.attached? %>
+          <%= cl_image_tag @pokemon.photo.key %>
+        <% end %>
+        <div class="profile-info">
+          <h1><%= @pokemon.name %></h1>
+          <span class="type-badge type-<%= @pokemon.element_type %>">
+            <%= @pokemon.element_type %>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Catch form -->
+    <div class="col-md-6 mb-4">
+      <div class="catch-form">
+        <h2>Catch <%= @pokemon.name %>! 🎯</h2>
+
+        <%= simple_form_for(@pokeball || Pokeball.new) do |f| %>
+          <%= f.hidden_field :pokemon_id, value: @pokemon.id %>
+          <%= f.input :trainer_id,
+                      collection: Trainer.all,
+                      label_method: :name,
+                      value_method: :id,
+                      prompt: "Select a trainer",
+                      label: "Trainer" %>
+          <%= f.input :location,
+                      placeholder: "Where did you find it?",
+                      label: "Location" %>
+          <%= f.input :caught_on, as: :date, label: "Caught on" %>
+          <%= f.submit "Catch it! 🎯", class: "btn btn-primary w-100 mt-2" %>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+
+  <%= link_to "← Back to Pokédex", root_path, class: "btn btn-link" %>
+</div>

@@ -1,10 +1,25 @@
-// Define variables for your color scheme
+// --- Pokémon theme
+$poke-red:    #ee1515;
+$poke-yellow: #ffcb05;
+$dark:        #2c2c2e;
+$muted:       #8a8d91;
 
-// For example:
-$red: #FD1015;
-$blue: #0D6EFD;
-$yellow: #FFC65A;
-$orange: #E67E22;
-$green: #1EDD88;
-$gray: #0E0000;
+// Element type colors
+$type-fire:     #f08030;
+$type-water:    #6890f0;
+$type-grass:    #78c850;
+$type-poison:   #a040a0;
+$type-bug:      #a8b820;
+$type-normal:   #a8a878;
+$type-electric: #f8d030;
+$type-ground:   #e0c068;
+$type-fairy:    #ee99ac;
+
+// Bootstrap base palette
+$red:        #FD1015;
+$blue:       #0D6EFD;
+$yellow:     #FFC65A;
+$orange:     #E67E22;
+$green:      #1EDD88;
+$gray:       #0E0000;
 $light-gray: #F4F4F4;

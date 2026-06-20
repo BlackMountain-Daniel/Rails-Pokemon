@@ -10,3 +10,24 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+// --- Pokémon navbar ---
+.navbar-pokemon {
+  background: $poke-red;
+  border-bottom: 5px solid $dark;
+
+  .navbar-brand {
+    color: $poke-yellow !important;
+    font-weight: 700;
+    text-shadow: 1px 1px 0 $dark;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 18px;
+
+    &:hover { color: $poke-yellow; }
+  }
+}

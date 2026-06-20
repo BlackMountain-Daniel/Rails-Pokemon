@@ -1,0 +1,15 @@
+<!-- pokemons/index.html.erb -->
+<div class="container py-4">
+  <h1 class="page-title">Pokédex</h1>
+  <div class="row">
+    <% @pokemons.each do |pokemon| %>
+      <div class="col-6 col-md-3 mb-4">
+        <%= link_to pokemon_path(pokemon), class: "poke-card" do %>
+          <%= cl_image_tag pokemon.photo.key if pokemon.photo.attached? %>
+          <span class="poke-name"><%= pokemon.name %></span>
+          <span class="type-badge type-<%= pokemon.element_type %>"><%= pokemon.element_type %></span>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
